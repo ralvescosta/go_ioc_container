@@ -6,14 +6,20 @@ import (
 )
 
 type Something struct {
-	repository IRepository
+	container IContainer
 }
 
 func (pst Something) DoSomething(dto domain.Dto) domain.Entity {
 	log.Println("[App::Something::DoSomething]")
-	return pst.repository.Create(dto)
+
+	var repository IRepository
+	pst.container.Resolve(&repository)
+
+	return repository.Create(dto)
 }
 
-func NewDoSomething() domain.ISomething {
-	return Something{}
+func NewDoSomething(container IContainer) domain.ISomething {
+	return Something{
+		container: container,
+	}
 }
