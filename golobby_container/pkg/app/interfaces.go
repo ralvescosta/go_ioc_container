@@ -1,6 +1,6 @@
 package app
 
-import "ioc/pkg/domain"
+import "ioc/golobby_container/pkg/domain"
 
 type IRepository interface {
 	Create(dto domain.Dto) domain.Entity

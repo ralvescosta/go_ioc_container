@@ -1,10 +1,10 @@
 package main
 
 import (
-	"ioc/pkg/app"
-	"ioc/pkg/domain"
-	"ioc/pkg/infra"
-	"ioc/pkg/interfaces"
+	"ioc/golobby_container/pkg/app"
+	"ioc/golobby_container/pkg/domain"
+	"ioc/golobby_container/pkg/infra"
+	"ioc/golobby_container/pkg/interfaces"
 )
 
 func main() {

@@ -1,7 +1,7 @@
 package app
 
 import (
-	"ioc/pkg/domain"
+	"ioc/golobby_container/pkg/domain"
 	"log"
 )
 

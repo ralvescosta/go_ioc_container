@@ -1,8 +1,8 @@
 package infra
 
 import (
-	"ioc/pkg/app"
-	"ioc/pkg/domain"
+	"ioc/golobby_container/pkg/app"
+	"ioc/golobby_container/pkg/domain"
 	"log"
 )
 
