@@ -1,19 +1,30 @@
 package interfaces
 
 import (
+	"ioc/pkg/app"
 	"ioc/pkg/domain"
 	"log"
 )
 
+type IInterface interface {
+	Controller(dto domain.Dto)
+}
+
 type Interface struct {
-	Usecase domain.ISomething
+	container app.IContainer
 }
 
-func (pst Interface) Controller() {
+func (pst Interface) Controller(dto domain.Dto) {
 	log.Println("[Interfaces::Interface::Controller]")
-	pst.Usecase.DoSomething(domain.Dto{})
+
+	var usecase domain.ISomething
+	pst.container.Resolve(&usecase)
+
+	usecase.DoSomething(dto)
 }
 
-func NewInterface() Interface {
-	return Interface{}
+func NewInterface(container app.IContainer) Interface {
+	return Interface{
+		container: container,
+	}
 }

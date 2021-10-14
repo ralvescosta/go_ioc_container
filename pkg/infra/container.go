@@ -29,5 +29,7 @@ func (pst *container) NamedTransient(name string, resolver interface{}) error {
 	return pst.ctx.NamedTransient(name, resolver)
 }
 func Newcontainer() app.IContainer {
-	return &container{}
+	return &container{
+		ctx: containerPkg.New(),
+	}
 }
